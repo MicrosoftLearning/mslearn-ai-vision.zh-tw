@@ -473,9 +473,9 @@ body = {
 response = requests.post(url, headers=headers, json=body)
 
 image=response.content
-with open("backgroundForeground.png", "wb") as file:
+with open("background.png", "wb") as file:
     file.write(image)
-print('  Results saved in backgroundForeground.png \n')
+print('  Results saved in background.png \n')
 ```
     
 2. 儲存您的變更，並針對 **images** 資料夾中的每個影像檔執行一次程式，開啟與每個影像程式碼檔案相同資料夾中產生的 **background.png** 檔案。  您會注意到背景已從每個影像中移除。
