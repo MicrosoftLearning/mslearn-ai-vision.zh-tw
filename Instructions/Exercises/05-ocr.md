@@ -24,7 +24,7 @@ lab:
 如果您的訂用帳戶中還沒有 **Azure AI 服務**資源，則必須加以佈建。
 
 1. 開啟 Azure 入口網站 (位於 `https://portal.azure.com`)，使用與您的 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入。
-2. 在頂端搜尋列中搜尋 *Azure AI 服務*、選取 [Azure AI 服務]****，並使用下列設定建立 Azure AI 服務多服務帳戶資源：
+2. 在頂端搜尋列中，搜尋 *Azure AI 服務*、選取 [Azure AI 服務]****，並使用下列設定建立 Azure AI 服務多服務帳戶資源：
     - **訂用帳戶**：您的 Azure 訂用帳戶**
     - **資源群組**：*選擇或建立資源群組 (如果您使用受限制的訂用帳戶，則您可能沒有建立新資源群組的權限 - 請使用所提供的資源群組)*
     - **區域**：*從美國東部、法國中部、南韓中部、北歐、東南亞、西歐、美國西部或東亞中選擇\**
@@ -49,7 +49,7 @@ lab:
     **C#**
     
     ```
-    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.1
+    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.3
     ```
 
     > **注意**：如果出現安裝開發套件延伸模組的提示，您可以放心關閉訊息。
@@ -57,7 +57,7 @@ lab:
     **Python**
     
     ```
-    pip install azure-ai-vision-imageanalysis==1.0.0b1
+    pip install azure-ai-vision-imageanalysis==1.0.0b3
     ```
 
 3. 檢視 **read-text** 資料夾的內容，並注意其中包含組態設定的檔案：
@@ -70,7 +70,7 @@ lab:
 
 ## 使用 Azure AI 視覺 SDK 從影像中讀取文字
 
-**Azure AI 視覺 SDK** 的功能之一，是從影像中讀取文字。 在此練習中，您將完成已部分實作、使用 Azure AI 視覺 SDK 從影像中讀取文字的用戶端應用程式。
+**Azure AI 視覺 SDK** 的功能之一，可從影像中讀取文字。 在此練習中，您將完成已部分實作、使用 Azure AI 視覺 SDK 從影像中讀取文字的用戶端應用程式。
 
 1. **read-text** 資料夾包含用戶端應用程式的程式碼檔案：
 
