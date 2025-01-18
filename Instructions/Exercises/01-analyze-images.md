@@ -6,7 +6,7 @@ lab:
 
 # 使用 Azure AI 視覺分析影像
 
-Azure AI 視覺是一種人工智慧功能，可讓軟體系統藉由分析影像來解譯視覺輸入。 在 Microsoft Azure 中，「視覺」**** Azure AI 服務會提供常見電腦視覺工作的預先建置模型，包括分析影像以建議標題和標籤、偵測常見物件和人物。 您也可以使用 Azure AI 視覺服務來移除背景，或建立影像的前景嵌空。
+Azure AI 視覺是一種人工智慧功能，可讓軟體系統藉由分析影像來解譯視覺輸入。 在 Microsoft Azure 中，「視覺」**** Azure AI 服務會提供常見電腦視覺工作的預先建置模型，包括分析影像以建議標題和標籤、偵測常見物件和人物。 
 
 ## 複製本課程的存放庫
 
@@ -408,86 +408,6 @@ if result.people is not None:
 3. 儲存您的變更，並針對 **images** 資料夾中的每個影像檔案執行一次程式，並觀察是否偵測到任何物件。 在每次執行後，檢視在與程式碼檔案相同的資料夾中產生的 **objects.jpg** 檔案，以查看標註的物件。
 
 > **注意**：在上述工作中，您使用是單一方法來分析影像，然後以累加方式新增程式碼來剖析並顯示結果。 SDK 也提供個別方法來建議標題、識別標籤、偵測物件等等，這表示您可以使用最適當的方法來只傳回所需的資訊，減少需要傳回的資料承載大小。 如需詳細資訊，請參閱 [.NET SDK 文件](https://learn.microsoft.com/dotnet/api/overview/azure/cognitiveservices/computervision?view=azure-dotnet)或 [Python SDK 文件](https://learn.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision)。
-
-## 拿掉背景或產生影像的前景嵌空
-
-在某些情況下，您可能需要建立已移除背景的影像，或可能會想要建立該影像的前景嵌空。 讓我們從背景移除開始。
-
-1. 在您的程式碼檔案中，尋找 **BackgroundForeground** 函式；然後在註解 **Remove the background from the image or generate a foreground matte** 下方新增下列程式碼：
-
-**C#**
-
-```C#
-// Remove the background from the image or generate a foreground matte
-Console.WriteLine($" Background removal:");
-// Define the API version and mode
-string apiVersion = "2023-02-01-preview";
-string mode = "backgroundRemoval"; // Can be "foregroundMatting" or "backgroundRemoval"
-
-string url = $"computervision/imageanalysis:segment?api-version={apiVersion}&mode={mode}";
-
-// Make the REST call
-using (var client = new HttpClient())
-{
-    var contentType = new MediaTypeWithQualityHeaderValue("application/json");
-    client.BaseAddress = new Uri(endpoint);
-    client.DefaultRequestHeaders.Accept.Add(contentType);
-    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
-
-    var data = new
-    {
-        url = $"https://github.com/MicrosoftLearning/mslearn-ai-vision/blob/main/Labfiles/01-analyze-images/Python/image-analysis/{imageFile}?raw=true"
-    };
-
-    var jsonData = JsonSerializer.Serialize(data);
-    var contentData = new StringContent(jsonData, Encoding.UTF8, contentType);
-    var response = await client.PostAsync(url, contentData);
-
-    if (response.IsSuccessStatusCode) {
-        File.WriteAllBytes("background.png", response.Content.ReadAsByteArrayAsync().Result);
-        Console.WriteLine("  Results saved in background.png\n");
-    }
-    else
-    {
-        Console.WriteLine($"API error: {response.ReasonPhrase} - Check your body url, key, and endpoint.");
-    }
-}
-```
-
-**Python**
-
-```Python
-# Remove the background from the image or generate a foreground matte
-print('\nRemoving background from image...')
-    
-url = "{}computervision/imageanalysis:segment?api-version={}&mode={}".format(endpoint, api_version, mode)
-
-headers= {
-    "Ocp-Apim-Subscription-Key": key, 
-    "Content-Type": "application/json" 
-}
-
-image_url="https://github.com/MicrosoftLearning/mslearn-ai-vision/blob/main/Labfiles/01-analyze-images/Python/image-analysis/{}?raw=true".format(image_file)  
-
-body = {
-    "url": image_url,
-}
-    
-response = requests.post(url, headers=headers, json=body)
-
-image=response.content
-with open("background.png", "wb") as file:
-    file.write(image)
-print('  Results saved in background.png \n')
-```
-    
-2. 儲存您的變更，並針對 **images** 資料夾中的每個影像檔執行一次程式，開啟與每個影像程式碼檔案相同資料夾中產生的 **background.png** 檔案。  您會注意到背景已從每個影像中移除。
-
-現在讓我們為影像產生前景嵌空。
-
-3. 在您的程式碼檔案中，尋找 **BackgroundForeground** 函式；然後在註解 **Define the API version and mode** 下方將模式變數變更為 `foregroundMatting`。
-
-4. 儲存您的變更，並針對 **images** 資料夾中的每個影像檔執行一次程式，開啟與每個影像程式碼檔案相同資料夾中產生的 **background.png** 檔案。  您會注意到影像已產生前景嵌空。
 
 ## 清除資源
 
