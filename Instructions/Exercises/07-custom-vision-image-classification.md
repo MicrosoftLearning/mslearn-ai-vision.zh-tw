@@ -46,7 +46,7 @@ lab:
 
 若要定型影像分類模型，您需要根據定型資源建立自訂視覺專案。 為此，您將使用自訂視覺入口網站。
 
-1. 在 Visual Studio Code 中，於您複製存放庫的 **07-custom-vision-image-classification/training-images** 資料夾中檢視定型影像。 此資料夾包含蘋果、香蕉和柳橙影像的子資料夾。
+1. 在 Visual Studio Code 中，於您複製存放庫的 **LabFiles/07-custom-vision-image-classification/training-images** 資料夾中檢視定型影像。 此資料夾包含蘋果、香蕉和柳橙影像的子資料夾。
 2. 在新的瀏覽器索引標籤中，開啟自訂視覺入口網站 (位於 `https://customvision.ai`)。 如果出現提示，請使用與 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入，並同意服務條款。
 3. 在自訂視覺入口網站中，使用下列設定建立新的專案：
     - **名稱**：水果分類
@@ -55,7 +55,7 @@ lab:
     - **專案類型**：分類
     - **分類類型**：多類別 (每一影像一個標籤)
     - **領域**：食物
-4. 在新的專案中，按一下 [\[+\] 新增影像]****，然後選取您先前檢視的 **training-images/apple** 資料夾中的所有檔案。 然後上傳影像檔，並指定 *apple* 標籤，如下所示：
+4. 在新的專案中，按一下 [\[+\] 新增影像]****，然後選取您先前檢視的 **LabFiles/07-custom-vision-image-classification/training-images/apple** 資料夾中的所有檔案。 然後上傳影像檔，並指定 *apple* 標籤，如下所示：
 
 ![上傳帶有蘋果標記的蘋果](../media/upload_apples.jpg)
    
