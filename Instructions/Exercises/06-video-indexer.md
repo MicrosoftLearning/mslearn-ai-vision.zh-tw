@@ -82,7 +82,7 @@ lab:
 
 Video Indexer 入口網站是管理影片索引專案的實用介面。 不過，您可能想要讓影片及其深入解析可供無法存取您的 Video Indexer 帳戶的人員使用。 Video Indexer 會提供一些小工具，讓您為此目的內嵌於網頁中。
 
-1. 在 Visual Studio Code 的 **06-video-indexer** 資料夾中，開啟 **analyze-video.html**。 這是您將新增 Video Indexer [播放程式]**** 和 [深入解析]**** 小工具的基本 HTML 頁面。 請注意標頭中 **vb.widgets.mediator.js** 指令碼的參考 - 此指令碼可讓頁面上的多個 Video Indexer 小工具彼此互動。
+1. 在 Visual Studio Code 的 [Labfiles/06-video-indexer]**** 資料夾中，開啟 [analyze-video.html]****。 這是您將新增 Video Indexer [播放程式]**** 和 [深入解析]**** 小工具的基本 HTML 頁面。 請注意標頭中 **vb.widgets.mediator.js** 指令碼的參考 - 此指令碼可讓頁面上的多個 Video Indexer 小工具彼此互動。
 2. 在 Video Indexer 入口網站中，返回 [媒體檔案]**** 頁面，然後開啟您的 [負責任 AI]**** 影片。
 3. 在影片播放程式之下，選取 [&lt;/&gt; 內嵌]**** 可檢視 HTML iframe 程式碼以內嵌小工具。
 4. 在 [共用和內嵌]**** 對話方塊中，選取 [播放程式]**** 小工具、將視訊大小設定為 560 x 315，然後將內嵌程式碼複製到剪貼簿。
@@ -117,7 +117,7 @@ Video Indexer 提供 REST API，可供您上傳和管理您帳戶中的影片。
 - 標頭中具有 API 金鑰之 **AccessToken** 方法的初始要求用於取得存取權杖。
 - 後續要求會在呼叫 REST 方法來處理影片時，使用存取權杖進行驗證。
 
-1. 在 Visual Studio Code 的 **06-video-indexer** 資料夾中，開啟 **get-videos.ps1**。
+1. 在 Visual Studio Code 的 **Labfiles/06-video-indexer** 資料夾中，開啟 **get-videos.ps1**。
 2. 在 PowerShell 指令碼中，將 **YOUR_ACCOUNT_ID** 和 **YOUR_API_KEY** 預留位置取代為您先前識別的帳戶識別碼和 API 金鑰值。
 3. 觀察免費帳戶的*位置*是「試用版」。 如果您已建立不受限制的 Video Indexer 帳戶 (具有相關聯的 Azure 資源)，即可將此變更為 Azure 資源的佈建位置 (例如「eastus」)。
 4. 檢閱指令碼中的程式碼，請注意叫用兩個 REST 方法：一個用以取得存取權杖，另一個用以列出您帳戶中的影片。
