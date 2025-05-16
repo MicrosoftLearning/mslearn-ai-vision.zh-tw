@@ -57,7 +57,7 @@ lab:
 
 若要訓練物件偵測模型，您必須上傳影像 (其包含想要模型識別的類別)，並加以標記來表示每個物件執行個體的周框方塊。
 
-1. 在 Visual Studio Code 中，於您複製存放庫的 **03-object-detection/training-images** 資料夾中檢視定型影像。 此資料夾包含水果的影像。
+1. 在 Visual Studio Code 中，於您複製存放庫的 **Labfiles/03-object-detection/training-images** 資料夾中檢視定型影像。 此資料夾包含水果的影像。
 2. 在自訂視覺入口網站，您的物件偵測專案中，選取 [新增影像] **** 並上傳已擷取資料夾中的影像。
 3. 影像上傳完成後，選取第一個加以開啟。
 4. 將滑鼠游標暫留在影像中的任一物件上，直到如下影像顯示自動偵測的區域。 然後選取物件，如有必要，請調整區域大小以將其環繞。
@@ -89,7 +89,7 @@ lab:
 1. 按一下自訂視覺入口網站中 [定型影像]**** 頁面右上方的 [設定]** (&#9881;) 圖示，以檢視專案設定。
 2. 在左側的 [一般]**** 之下，記下可唯一識別此專案的 [專案識別碼]****。
 3. 在右側的 [資源]**** 之下，注意已顯示金鑰和端點。 這些是*定型*資源的詳細資料 (您也可以在 Azure 入口網站中檢視資源以取得這項資訊)。
-4. 在 Visual Studio Code 中，於 **03-object-detection** 資料夾之下，根據您的語言喜好設定，展開 **C-Sharp** 或 **Python** 資料夾。
+4. 在 Visual Studio Code 中，於 [Labfiles/03-object-detection]**** 資料夾之下，根據您的語言喜好設定，展開 [C-Sharp]**** 或 [Python]**** 資料夾。
 5. 以滑鼠右鍵按一下 **train-detector** 資料夾，然後開啟整合式終端機。 然後針對您的語言喜好設定執行適當的命令，以安裝自訂視覺定型套件：
 
 **C#**
@@ -165,7 +165,7 @@ pip install azure-cognitiveservices-vision-customvision==3.1.1
 
 既然您已發佈影像分類模型，即可從用戶端應用程式使用。 同樣地，您可以選擇使用 **C#** 或 **Python**。
 
-1. 在 Visual Studio Code 中，瀏覽至 **03-object-detection** 資料夾，並在您慣用語言 (**C-Sharp** 或 **Python**) 的資料夾中，展開 **test-detector** 資料夾。
+1. 在 Visual Studio Code 中，瀏覽至 **Labfiles/03-object-detection** 資料夾，並在您慣用語言 (**C-Sharp** 或 **Python**) 的資料夾中，展開 **test-detector** 資料夾。
 2. 以滑鼠右鍵按一下 **test-detector** 資料夾，然後開啟整合式終端機。 然後輸入下列 SDK 特有命令來安裝自訂視覺預測套件：
 
 **C#**
