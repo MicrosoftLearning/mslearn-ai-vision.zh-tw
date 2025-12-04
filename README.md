@@ -1,3 +1,5 @@
+**⚠️ This GitHub repo will retire on 30th December 2025.** 
+
 # 在 Azure 中開發電腦視覺解決方案
 
 此存放庫中的練習旨在為您提供實際作學習體驗，在此體驗中，您將探索開發人員在 Microsoft azure 上建立電腦視覺解決方案時執行的一般工作。
